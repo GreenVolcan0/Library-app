@@ -1,0 +1,47 @@
+<Window x:Class="LibraryApp.Views.AuthorEditDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Автор" Width="400" Height="360"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        Background="{StaticResource BackgroundBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="{StaticResource PrimaryBrush}">
+            <TextBlock x:Name="TxtTitle" Text="Добавление автора"
+                       FontSize="16" FontWeight="Bold" Foreground="White"
+                       VerticalAlignment="Center" Margin="20,0"/>
+        </Border>
+
+        <StackPanel Grid.Row="1" Margin="24,20">
+            <TextBlock Text="Имя *" Style="{StaticResource FormLabel}"/>
+            <TextBox x:Name="TxtFirstName" Style="{StaticResource ModernTextBox}" Margin="0,0,0,14"/>
+
+            <TextBlock Text="Фамилия *" Style="{StaticResource FormLabel}"/>
+            <TextBox x:Name="TxtLastName" Style="{StaticResource ModernTextBox}" Margin="0,0,0,14"/>
+
+            <TextBlock Text="Страна" Style="{StaticResource FormLabel}"/>
+            <TextBox x:Name="TxtCountry" Style="{StaticResource ModernTextBox}" Margin="0,0,0,14"/>
+
+            <TextBlock Text="Дата рождения (ДД.ММ.ГГГГ)" Style="{StaticResource FormLabel}"/>
+            <TextBox x:Name="TxtBirthDate" Style="{StaticResource ModernTextBox}"
+                     ToolTip="Например: 09.09.1828"/>
+        </StackPanel>
+
+        <Border Grid.Row="2" Background="White" BorderBrush="#E0E0E0" BorderThickness="0,1,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
+                        VerticalAlignment="Center" Margin="20,0">
+                <Button Content="Отмена" Style="{StaticResource SecondaryButton}"
+                        Margin="0,0,10,0" Click="BtnCancel_Click"/>
+                <Button Content="💾 Сохранить" Style="{StaticResource PrimaryButton}"
+                        Click="BtnSave_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
